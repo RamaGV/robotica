@@ -1,12 +1,12 @@
 from flask import Flask, render_template, Response
 import paho.mqtt.client as mqtt
-import cv2
-import threading
+#import cv2
+#import threading
 
 app = Flask(__name__)
 
 # Configura la conexión MQTT y camara
-cap = cv2.VideoCapture('http://192.168.41.123:81/stream')
+#cap = cv2.VideoCapture('http://192.168.41.123:81/stream')
 mqtt_broker = "192.168.68.229"
 topicVel = "car/vel"
 topicDir = "car/dir"
@@ -71,12 +71,13 @@ def enviarMov_reiniciar():
 
 
 if __name__ == '__main__':
-    t1 = threading.Thread(target=app.run, kwargs={'host':'0.0.0.0', 'port':8080, 'debug':False})
-    t1.start()
+    app.run()
+    #t1 = threading.Thread(target=app.run, kwargs={'host':'0.0.0.0', 'port':8080, 'debug':False})
+    #t1.start()
 
-    while(True):
-        ret, frame = cap.read()
-        cv2.imshow('Imagen desde la camara',frame)
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            cv2.destroyAllWindows()
-            break
+#    while(True):
+#        ret, frame = cap.read()
+#        cv2.imshow('Imagen desde la camara',frame)
+#        if cv2.waitKey(1) & 0xFF == ord('q'):
+#            cv2.destroyAllWindows()
+#            break
