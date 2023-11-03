@@ -1,0 +1,14 @@
+[0;1;32m*[0m mosquitto.service - Mosquitto MQTT v3.1/v3.1.1 Broker
+     Loaded: loaded (/lib/systemd/system/mosquitto.service; enabled; vendor preset: enabled)
+     Active: [0;1;32mactive (running)[0m since Thu 2023-10-19 04:22:30 -03; 2h 28min ago
+       Docs: man:mosquitto.conf(5)
+             man:mosquitto(8)
+   Main PID: 720 (mosquitto)
+      Tasks: 3 (limit: 9430)
+     Memory: 1.9M
+     CGroup: /system.slice/mosquitto.service
+             `-720 /usr/sbin/mosquitto -c /etc/mosquitto/mosquitto.conf
+
+oct 19 04:22:28 ubuntu-20 systemd[1]: Starting Mosquitto MQTT v3.1/v3.1.1 Broker...
+oct 19 04:22:30 ubuntu-20 mosquitto[720]: [   26.479033]~DLT~  720~INFO     ~FIFO /tmp/dlt cannot be opened. Retrying later...
+oct 19 04:22:30 ubuntu-20 systemd[1]: Started Mosquitto MQTT v3.1/v3.1.1 Broker.
